@@ -2,19 +2,21 @@ version: '2'
 
 services:
   container-log:
-    image: kswapd/container-log:g1
+    image: kswapd/container-log:dc
     network_mode: host
     labels:
       caas.hna.log.container: 'true'
       io.rancher.scheduler.global: 'true'
   container-monitor:
     privileged: true
-    image: mutemaniac/container-monitor:t0.5
+    image: mutemaniac/container-monitor:i0.7
     volumes:
-    - /:/rootfs:ro
-    - /var/run:/var/run:rw
-    - /sys:/sys:ro
-    - /var/lib/docker/:/var/lib/docker:ro
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    environment:
+      - INFLUXDB_RELAY_HOST=172.29.96.100:9096
     labels:
       caas.hna.monitor.container: 'true'
       io.rancher.scheduler.global: 'true'

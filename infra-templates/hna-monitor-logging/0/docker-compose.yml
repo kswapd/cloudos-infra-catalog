@@ -16,7 +16,7 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
     environment:
-      - INFLUXDB_RELAY_HOST=172.29.96.100:9096
+      - INFLUXDB_RELAY_HOST=10.0.0.9:9096
     labels:
       caas.hna.monitor.container: 'true'
       io.rancher.scheduler.global: 'true'

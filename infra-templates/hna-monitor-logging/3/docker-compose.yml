@@ -2,7 +2,7 @@ version: '2'
 
 services:
   container-log:
-    image: kswapd/container-log:1.0dce
+    image: kswapd/container-log:1.1dce
     network_mode: host
     labels:
       caas.hna.log.container: 'true'

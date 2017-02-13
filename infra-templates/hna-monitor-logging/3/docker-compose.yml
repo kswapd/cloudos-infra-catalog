@@ -22,7 +22,7 @@ services:
       io.rancher.scheduler.global: 'true'
   container-custom-log:
     privileged: true
-    image: "kswapd/container-custom-log:2.2dce"
+    image: "kswapd/container-custom-log:2.3dce"
     volumes:
     - /var/log/containers:/var/log/containers:rw
     labels:
